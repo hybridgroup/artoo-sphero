@@ -4,7 +4,7 @@ module Artoo
   module Adaptors
     # Connect to a Sphero device
     # @see http://gosphero.com Sphero information
-    # @see http://rubydoc.info/gems/hybridgroup-sphero HybridGroup Sphero Documentation
+    # @see http://rubydoc.info/gems/hybridgroup-sphero Sphero gem Documentation
     class Sphero < Adaptor
       finalizer :finalize
       attr_reader :sphero

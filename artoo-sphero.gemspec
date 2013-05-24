@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "artoo-sphero"
   s.version     = Artoo::Sphero::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Ron Evans", "Adrian Zankich"]
+  s.authors     = ["Ron Evans", "Adrian Zankich", "Mike Ford"]
   s.email       = ["artoo@hybridgroup.com"]
   s.homepage    = "https://github.com/hybridgroup/artoo-sphero"
   s.summary     = %q{Artoo adaptor and driver for Sphero robot}

@@ -11,7 +11,7 @@ module Artoo
       BLUE    = [0,   0,   255]
       WHITE   = [255, 255, 255]
 
-      COMMANDS = [:detect_collisions, :clear_collisions, :collisions,
+      COMMANDS = [:roll, :stop, :detect_collisions, :clear_collisions, :collisions,
                   :power_notifications, :sensor_data, :set_color, :color].freeze
 
       # Starts drives and required connections

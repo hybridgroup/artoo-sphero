@@ -6,27 +6,30 @@ describe Artoo::Drivers::Sphero do
     @device = mock('device')
     @driver = Artoo::Drivers::Sphero.new(:parent => @device)
     @connection = mock('connection')
-    @col1 = ::Sphero::Response::CollisionDetected.new("yo", "ho")
-    @col2 = ::Sphero::Response::CollisionDetected.new("yo", "ho")
-    @sen1 = ::Sphero::Response::SensorData.new("yo", "ho")
-    @sen2 = ::Sphero::Response::SensorData.new("lo", "no")
-    @sen3 = ::Sphero::Response::SensorData.new("jo", "jo")
-    @pow1 = ::Sphero::Response::PowerNotification.new("yo", "ho")
-    @pow2 = ::Sphero::Response::PowerNotification.new("yo", "ho")
-    @connection.stubs(:async_messages).returns([@col1, @col2, @sen1, @sen2, @sen3, @pow1, @pow2])
+    @messages = Queue.new
+    @messages << ::Sphero::Response::CollisionDetected.new("yo", "ho")
+    @messages << ::Sphero::Response::CollisionDetected.new("yo", "ho")
+    @messages << ::Sphero::Response::SensorData.new("yo", "ho")
+    @messages << ::Sphero::Response::SensorData.new("lo", "no")
+    @messages << ::Sphero::Response::SensorData.new("jo", "jo")
+    @messages << ::Sphero::Response::PowerNotification.new("yo", "ho")
+    @messages << ::Sphero::Response::PowerNotification.new("yo", "ho")
+    @connection.stubs(:messages).returns(@messages)
     @device.stubs(:connection).returns(@connection)
   end
 
-  it 'Sphero#collisions' do
-    @driver.collisions.size.must_equal 2
-  end
+  it 'Sphero#handle_message_events' do
+    @driver.stubs(:handle_collision_detected)
+    @driver.stubs(:handle_power_notification)
+    @driver.stubs(:handle_sensor_data)
 
-  it 'Sphero#power_notifications' do
-    @driver.power_notifications.size.must_equal 2
-  end
+    @messages.empty?.must_equal false
+    @messages.size.must_equal 7
 
-  it 'Sphero#sensor_data' do
-    @driver.sensor_data.size.must_equal 3
+    @driver.handle_message_events
+    
+    @messages.empty?.must_equal true
+    @messages.size.must_equal 0
   end
 
   describe 'color' do

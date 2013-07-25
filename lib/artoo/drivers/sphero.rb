@@ -69,7 +69,7 @@ module Artoo
         end
       end
 
-#      private
+      private
 
       # Publish collision events
       def handle_collision_detected(data)

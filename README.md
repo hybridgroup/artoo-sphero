@@ -18,7 +18,24 @@ gem install artoo-sphero
 
 ### OSX
 
-Someone please fill in the blanks here...
+The main steps are:
+- Pair your computer and the Sphero
+- Use a socket to serial connection to map a TCP socket to the local unix port
+- Connect to the device via Artoo
+
+First pair your computer and Sphero. You might be prompted for a passcode, but you do not need to enter it, sinec the Sphero does not check.
+
+Once paired, use the `artoo connect scan` command to find out your connection info:
+
+```
+$ artoo connect scan
+```
+
+Now you are ready to connect to the Sphero using the socket, in this example port 4567:
+
+```
+artoo connect socat 4567 Sphero-WRW
+```
 
 ### Ubuntu
 
@@ -28,27 +45,26 @@ The main steps are:
 - Use a socket to serial connection to map a TCP socket to the local unix port
 - Connect to the device via Artoo
 
-First pair your computer and Sphero.
+First pair your computer and Sphero. You might be prompted for a passcode, but you do not need to enter it, sinec the Sphero does not check.
 
-Once paired, use the hcitool program's 'scan' feature to find out your connection info:
+Once paired, use the `artoo connect scan` command to find out your connection info:
 
 ```
-$ hcitool scan
+$ artoo connect scan
 Scanning ...
   00:06:66:4A:14:99 Sphero-WRW
 ```
 
-Next, you need to bind the Sphero to the system port. In the above example, /dev/Sphero-WRW. The easiest way to do this is to use the included "sphero_linux_bind.sh" script:
+Next, you need to bind the Sphero to the system port. In the above example, /dev/Sphero-WRW. The easiest way to do this is to use the `artoo connect bind` command:
 
 ```
-sudo ./bin/sphero_linux_bind.sh 1 00:06:66:4A:14:99 WRW
+artoo connect bind 00:06:66:4A:14:99 Sphero-WRW
 ```
 
-Now you are finally ready to connect to the Sphero using the socket, in this example port 4567:
+Now you are ready to connect to the Sphero using the socket, in this example port 4567:
 
 ```
-sudo chmod 666 /dev/Sphero-WRW
-./bin/sphero_linux_socat.sh 4567 Sphero-WRW
+artoo connect socat 4567 Sphero-WRW
 ```
 
 ### Windows

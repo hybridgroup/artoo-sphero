@@ -15,9 +15,7 @@ module Artoo
       # Closes connection with device if connected
       # @return [Boolean]
       def finalize
-        if connected?
-          sphero.close
-        end
+        disconnect if connected?
       end
 
       # Creates a connection with Sphero object with retries
@@ -44,7 +42,8 @@ module Artoo
       # Closes connection with device
       # @return [Boolean]
       def disconnect
-        sphero.close
+        sphero.close if connected?
+
         super
       end
 

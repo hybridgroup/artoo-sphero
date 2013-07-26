@@ -8,13 +8,14 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    artoo (1.0.0.rc1)
+    artoo (1.0.0.rc2)
       celluloid (~> 0.14.1)
       celluloid-io (~> 0.14.1)
       multi_json (~> 1.6)
       pry (~> 0.9)
       rake (~> 10.0)
       reel (~> 0.4.0.pre)
+      thor (~> 0.18.1)
     celluloid (0.14.1)
       timers (>= 1.0.0)
     celluloid-io (0.14.1)
@@ -48,6 +49,7 @@ GEM
       websocket_parser (>= 0.1.2)
     slop (3.4.6)
     sphero (1.4.1)
+    thor (0.18.1)
     timers (1.1.0)
     websocket_parser (0.1.4)
       http

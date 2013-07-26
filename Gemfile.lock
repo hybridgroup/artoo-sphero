@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    artoo-sphero (1.0.0.pre)
-      artoo (~> 1.0.0.pre)
-      hybridgroup-sphero (~> 1.3.0)
+    artoo-sphero (1.0.0.rc1)
+      artoo (~> 1.0.0.rc)
+      sphero (~> 1.4.1)
 
 GEM
   remote: http://rubygems.org/
@@ -26,7 +26,6 @@ GEM
       certified
       http_parser.rb
     http_parser.rb (0.5.3)
-    hybridgroup-sphero (1.3.0)
     metaclass (0.0.1)
     method_source (0.8.1)
     minitest (5.0.6)
@@ -47,7 +46,8 @@ GEM
       http_parser.rb (>= 0.5.3)
       rack (>= 1.4.0)
       websocket_parser (>= 0.1.2)
-    slop (3.4.5)
+    slop (3.4.6)
+    sphero (1.4.1)
     timers (1.1.0)
     websocket_parser (0.1.4)
       http

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    artoo-sphero (1.0.0.rc1)
+    artoo-sphero (1.0.0.rc2)
       artoo (~> 1.0.0.rc)
       sphero (~> 1.4.1)
 

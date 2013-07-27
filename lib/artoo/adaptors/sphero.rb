@@ -27,7 +27,7 @@ module Artoo
           @sphero = ::Sphero.new(connect_to)
           super
           return true
-        rescue Errno::EBUSY => e
+        rescue Errno::EBUSY, Errno::ECONNREFUSED => e
           @retries_left -= 1
           if @retries_left > 0
             retry

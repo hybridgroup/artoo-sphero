@@ -51,7 +51,7 @@ $ artoo connect scan
 Now you are ready to connect to the Sphero using the socket, in this example port 4567:
 
 ```
-artoo connect socat 4567 Sphero-WRW
+artoo connect serial Sphero-WRW 4567
 ```
 
 ### Ubuntu
@@ -81,7 +81,7 @@ artoo connect bind 00:06:66:4A:14:99 Sphero-WRW
 Now you are ready to connect to the Sphero using the socket, in this example port 4567:
 
 ```
-artoo connect socat 4567 Sphero-WRW
+artoo connect serial Sphero-WRW 4567
 ```
 
 ### Windows

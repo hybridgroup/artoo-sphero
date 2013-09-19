@@ -86,4 +86,4 @@ artoo connect serial Sphero-WRW 4567
 
 ### Windows
 
-Someone please fill in the blanks here...
+We are currently working with the Celluloid team to add Windows support. Please check back soon!

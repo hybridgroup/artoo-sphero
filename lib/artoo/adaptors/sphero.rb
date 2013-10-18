@@ -6,17 +6,10 @@ module Artoo
     # @see http://gosphero.com Sphero information
     # @see http://rubydoc.info/gems/hybridgroup-sphero Sphero gem Documentation
     class Sphero < Adaptor
-      finalizer :finalize
       attr_reader :sphero
 
       # Number of retries when connecting
       RETRY_COUNT = 5
-
-      # Closes connection with device if connected
-      # @return [Boolean]
-      def finalize
-        disconnect if connected?
-      end
 
       # Creates a connection with Sphero object with retries
       # @return [Boolean]

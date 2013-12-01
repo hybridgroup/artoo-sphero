@@ -14,6 +14,12 @@ For more information abut Artoo, check out our repo at https://github.com/hybrid
 gem install artoo-sphero
 ```
 
+Afterwards you need to install `socat` - for this please run the following command (works on both OSX and Linux):
+
+```
+artoo install socat
+```
+
 ## Using
 
 ```ruby

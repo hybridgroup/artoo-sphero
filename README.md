@@ -84,6 +84,8 @@ Now you are ready to connect to the Sphero using the socket, in this example por
 artoo connect serial Sphero-WRW 4567
 ```
 
+In order for the last command to work you need to have the `socat` package installed. You can install it via `sudo apt-get install socat`.
+
 ### Windows
 
 We are currently working with the Celluloid team to add Windows support. Please check back soon!

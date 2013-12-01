@@ -14,6 +14,12 @@ For more information abut Artoo, check out our repo at https://github.com/hybrid
 gem install artoo-sphero
 ```
 
+Afterwards you need to install `socat` - for this please run the following command (works on both OSX and Linux):
+
+```
+artoo install socat
+```
+
 ## Using
 
 ```ruby
@@ -83,8 +89,6 @@ Now you are ready to connect to the Sphero using the socket, in this example por
 ```
 artoo connect serial Sphero-WRW 4567
 ```
-
-In order for the last command to work you need to have the `socat` package installed. You can install it via `sudo apt-get install socat`.
 
 ### Windows
 

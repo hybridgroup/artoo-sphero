@@ -54,4 +54,7 @@ describe Artoo::Drivers::Sphero do
       b.must_equal 6
     end
   end
+
+  it 'should be able to start calibration process'
+  it 'should be able to finish calibration process'
 end

@@ -93,3 +93,11 @@ artoo connect serial Sphero-WRW 4567
 ### Windows
 
 We are currently working with the Celluloid team to add Windows support. Please check back soon!
+
+## How To Calibrate Sphero
+
+You might want to calibrate the orientation of the Sphero so that it is pointed 'forward'. There are 2 functions that have been added to the Sphero driver to help with this.
+
+Call `start_calibration` to put the Sphero into 'calibration mode' by turning on the tail LED and turning off the auto-stablization. You can now manually turn the Sphero to so the tail LED is pointed to the rear of the direction in which you want the Sphero to go.
+
+Call `finish_calibration` to turn off 'calibration mode' by turning off the tail LED and turning back on the auto-stablization. Whichever direction that the tail LED was pointed, is now the rear direction for the Sphero.

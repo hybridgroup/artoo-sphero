@@ -11,7 +11,8 @@ module Artoo
       BLUE    = [0,   0,   255]
       WHITE   = [255, 255, 255]
 
-      COMMANDS = [:roll, :stop, :detect_collisions, :messages, :set_color, :color].freeze
+      COMMANDS = [:roll, :stop, :detect_collisions, :messages, :set_color, :color, :back_led_output, 
+                  :heading, :stabilization].freeze
 
       # Starts drives and required connections
 
@@ -99,6 +100,21 @@ module Artoo
         when :white  then WHITE
         else colors
         end
+      end
+
+      # Starts calibration process by turning on back LED and turning off
+      # auto-stabilization
+      def start_calibration
+        connection.back_led_output = 127
+        connection.stabilization = false
+      end
+
+      # Finishes calibration process by setting the new heading, turning off back LED,
+      # and turning back on auto-stabilization
+      def finish_calibration
+        connection.heading = 0 
+        connection.back_led_output = 0
+        connection.stabilization = true
       end
 
       private

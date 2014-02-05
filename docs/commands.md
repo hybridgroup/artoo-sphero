@@ -7,25 +7,25 @@ Public: Starts the sphero rolling at the provided speed (value between ´0´ and
 - **speed** - params
 - **direction** - params
 
-Returns true | nil.
+** Returns true or nil. ** 
 
 ## stop → true | nil
 
 Public: Stops the sphero.
 
-Returns true | nil.
+** Returns true or nil. ** 
 
 ## detect_collissions → true | nil
 
 Public: Sets the sphero to detect collisions and report them.
 
-Returns true | nil.
+** Returns true or nil. ** 
 
 ## messages → [sphero_event]
 
 Public: Returns an array of sphero events, the messages reported by the sphero.
 
-Returns sphero_event.
+** Returns sphero_event. ** 
 
 ## color(:color_symbol | [red, green, blue]) → [red_int, green_int, blue_int]
 
@@ -36,7 +36,7 @@ Public: You can pass a color as a symbol or an array containing RGB colors from 
 - **green** - params
 - **blue** - params
 
-Returns [red_int, green_int, blue_int].
+** Returns [red_int, green_int, blue_int]. ** 
 
 ## set_color([red, green, blue]) → true | nil
 
@@ -46,4 +46,4 @@ Public: REVISION PENDING: You can either use it in tandem with color to set the 
 - **green** - params
 - **blue** - params
 
-Returns true | nil.
+** Returns true | nil. ** 

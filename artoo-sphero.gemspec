@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "artoo-sphero"
   s.version     = Artoo::Sphero::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Ron Evans", "Adrian Zankich", "Mike Ford"]
+  s.authors     = ["Ron Evans", "Adrian Zankich", "Mike Ford", "Tobias Pfeiffer", "Edgar Silva"]
   s.email       = ["artoo@hybridgroup.com"]
   s.homepage    = "https://github.com/hybridgroup/artoo-sphero"
   s.summary     = %q{Artoo adaptor and driver for Sphero robot}
@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'artoo', '>= 1.4.0'
-  s.add_runtime_dependency 'sphero', '>= 1.4.1'
+  s.add_runtime_dependency 'artoo', '>= 1.6.0'
+  s.add_runtime_dependency 'sphero', '>= 1.5.0'
   s.add_development_dependency 'minitest', '>= 5.0'
   s.add_development_dependency 'minitest-happy'
   s.add_development_dependency 'mocha', '>= 0.14.0'

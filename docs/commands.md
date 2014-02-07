@@ -21,7 +21,7 @@ Stops the sphero.
 
 `true or nil`
 
-## detect_collissions 
+## detect_collisions 
 
 Sets the sphero to detect collisions and report them.
 

@@ -114,7 +114,7 @@ module Artoo
       def get_rgb
         rgb = connection.user_led
 
-        [rgb.r, rgb.g, rgb.b]
+        [rgb.r, rgb.g, rgb.b] if rgb
       end
 
       private

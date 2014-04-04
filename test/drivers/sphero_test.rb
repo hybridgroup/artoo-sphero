@@ -59,12 +59,16 @@ describe Artoo::Drivers::Sphero do
 
     let(:rgb_color) { OpenStruct.new(r: 255, g: 254, b: 253) }
 
-    before do
+    it 'returns rgb color' do
       @connection.stubs(:user_led).returns(rgb_color)
+
+      @driver.get_rgb.must_equal [255, 254, 253]
     end
 
-    it 'returns rgb color' do
-      @driver.get_rgb.must_equal [255, 254, 253]
+    it 'returns nil if message lost' do
+      @connection.stubs(:user_led).returns(nil)
+
+      @driver.get_rgb.must_equal nil
     end
 
   end

@@ -106,6 +106,11 @@ module Artoo
         end
       end
 
+      # Get the sphero color
+
+      # Public: You can retrieve current sphero color
+      #
+      # Returns array of rgb values
       def get_rgb
         rgb = connection.user_led
 

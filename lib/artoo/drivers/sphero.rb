@@ -13,10 +13,10 @@ module Artoo
 
       COMMANDS = [:ping, :version, :bluetooth_info, :user_led, :auto_reconnect,
                   :disable_auto_reconnect, :power_state, :sphero_sleep, :roll,
-                  :stop, :heading, :stabilization, :color, :rgb,
+                  :stop, :heading, :stabilization, :color, :rgb, :set_color,
                   :back_led_output, :rotation_rate, :set_power_notification,
-                  :set_data_streaming, :configure_collision_detection,
-                  :stabilization].freeze
+                  :set_data_streaming, :detect_collisions,
+                  :handle_message_events, :stabilization].freeze
 
       # Starts drives and required connections
 

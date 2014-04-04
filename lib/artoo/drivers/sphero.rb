@@ -11,12 +11,12 @@ module Artoo
       BLUE    = [0,   0,   255]
       WHITE   = [255, 255, 255]
 
-      COMMANDS = [:ping, :version, :bluetooth_info, :user_led, :auto_reconnect,
+      COMMANDS = [:ping, :version, :bluetooth_info, :auto_reconnect,
                   :disable_auto_reconnect, :power_state, :sphero_sleep, :roll,
                   :stop, :heading, :stabilization, :color, :rgb, :set_color,
                   :back_led_output, :rotation_rate, :set_power_notification,
                   :set_data_streaming, :detect_collisions,
-                  :handle_message_events].freeze
+                  :handle_message_events, :get_rgb].freeze
 
       # Starts drives and required connections
 
@@ -104,6 +104,12 @@ module Artoo
         when :white  then WHITE
         else colors
         end
+      end
+
+      def get_rgb
+        rgb = connection.user_led
+
+        [rgb.r, rgb.g, rgb.b]
       end
 
       private

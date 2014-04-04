@@ -1,5 +1,6 @@
 require 'artoo/robot'
 
+require 'minitest'
 require 'minitest/autorun'
 require 'mocha/setup'
 

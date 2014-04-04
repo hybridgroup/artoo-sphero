@@ -57,4 +57,19 @@ describe Artoo::Drivers::Sphero do
 
   it 'should be able to start calibration process'
   it 'should be able to finish calibration process'
+
+  describe 'get_rgb' do
+
+    let(:rgb_color) { OpenStruct.new(r: 255, g: 254, b: 253) }
+
+    before do
+      @connection.stubs(:user_led).returns(rgb_color)
+    end
+
+    it 'returns rgb color' do
+      @driver.get_rgb.must_equal [255, 254, 253]
+    end
+
+  end
+
 end

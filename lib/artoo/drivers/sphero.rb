@@ -109,7 +109,7 @@ module Artoo
 
       # Publish collision events
 
-      # Public: Handles collision message events.
+      # Handles collision message events.
       #
       # data - params
       #
@@ -131,7 +131,7 @@ module Artoo
 
       # Publish collision events
 
-      # Public: Handles sensor message events.
+      # Handles sensor message events.
       #
       # data - params
       #

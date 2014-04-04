@@ -11,7 +11,11 @@ module Artoo
       BLUE    = [0,   0,   255]
       WHITE   = [255, 255, 255]
 
-      COMMANDS = [:roll, :stop, :detect_collisions, :messages, :set_color, :color].freeze
+      COMMANDS = [:ping, :version, :bluetooth_info, :user_led, :auto_reconnect,
+                  :disable_auto_reconnect, :power_state, :sphero_sleep, :roll,
+                  :stop, :heading, :stabilization, :color, :rgb,
+                  :back_led_output, :rotation_rate, :set_power_notification,
+                  :set_data_streaming, :configure_collision_detection].freeze
 
       # Starts drives and required connections
 

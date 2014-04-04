@@ -41,8 +41,8 @@ module Artoo
       # Public: Handles different message events.
       #
       # Returns sphero_event.
-      def handle_message_events         
-        while not connection.messages.empty? do        
+      def handle_message_events
+        while not connection.messages.empty? do
           evt = connection.messages.pop
           case 
           when evt.is_a?(::Sphero::Response::CollisionDetected)

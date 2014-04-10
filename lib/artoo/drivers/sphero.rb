@@ -79,7 +79,7 @@ module Artoo
       #
       # Returns true | nil.
       def set_color(*colors)
-        connection.rgb(*color(*colors))
+        connection.rgb(*color(*colors), true)
       end
 
       # Retrieves color

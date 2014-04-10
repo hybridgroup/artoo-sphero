@@ -11,11 +11,12 @@ module Artoo
       BLUE    = [0,   0,   255]
       WHITE   = [255, 255, 255]
 
-      COMMANDS = [:ping, :version, :bluetooth_info, :user_led, :auto_reconnect,
+      COMMANDS = [:ping, :version, :bluetooth_info, :auto_reconnect,
                   :disable_auto_reconnect, :power_state, :sphero_sleep, :roll,
-                  :stop, :heading, :stabilization, :color, :rgb,
+                  :stop, :heading, :stabilization, :color, :rgb, :set_color,
                   :back_led_output, :rotation_rate, :set_power_notification,
-                  :set_data_streaming, :configure_collision_detection].freeze
+                  :set_data_streaming, :detect_collisions,
+                  :handle_message_events, :get_rgb].freeze
 
       # Starts drives and required connections
 
@@ -41,8 +42,8 @@ module Artoo
       # Public: Handles different message events.
       #
       # Returns sphero_event.
-      def handle_message_events         
-        while not connection.messages.empty? do        
+      def handle_message_events
+        while not connection.messages.empty? do
           evt = connection.messages.pop
           case 
           when evt.is_a?(::Sphero::Response::CollisionDetected)
@@ -78,7 +79,7 @@ module Artoo
       #
       # Returns true | nil.
       def set_color(*colors)
-        connection.rgb(*color(*colors))
+        connection.rgb(*color(*colors), true)
       end
 
       # Retrieves color
@@ -105,11 +106,22 @@ module Artoo
         end
       end
 
+      # Get the sphero color
+
+      # Public: You can retrieve current sphero color
+      #
+      # Returns array of rgb values
+      def get_rgb
+        rgb = connection.user_led
+
+        [rgb.r, rgb.g, rgb.b] if rgb
+      end
+
       private
 
       # Publish collision events
 
-      # Public: Handles collision message events.
+      # Handles collision message events.
       #
       # data - params
       #
@@ -131,7 +143,7 @@ module Artoo
 
       # Publish collision events
 
-      # Public: Handles sensor message events.
+      # Handles sensor message events.
       #
       # data - params
       #

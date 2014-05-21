@@ -1,6 +1,7 @@
 require 'artoo'
 
-connection :sphero, :adaptor => :sphero, :port => '127.0.0.1:1234'
+connection :sphero, :adaptor => :sphero, :port => '/dev/rfcomm0' #linux
+#connection :sphero, :adaptor => :sphero, :port => '127.0.0.1:4567'
 device     :sphero, :driver  => :sphero
 
 connection :pebble, :adaptor => :pebble

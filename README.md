@@ -48,10 +48,10 @@ The main steps are:
 
 First pair your computer and Sphero. You might be prompted for a passcode, but you do not need to enter it, sinec the Sphero does not check.
 
-Once paired, use the `artoo connect scan` command to find out your connection info:
+Once paired, use the `artoo scan serial` command to find out your connection info:
 
 ```
-$ artoo connect scan
+$ artoo scan serial
 ```
 
 Now you are ready to connect to the Sphero, update the code to use correct serial port:

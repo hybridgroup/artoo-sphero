@@ -14,12 +14,6 @@ For more information abut Artoo, check out our repo at https://github.com/hybrid
 gem install artoo-sphero
 ```
 
-Afterwards you need to install `hybridgroup-serialport`
-
-```
-gem install hybridgroup-serialport
-```
-
 ## Using
 
 ```ruby

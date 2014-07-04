@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'artoo', '>= 1.6.0'
-  s.add_runtime_dependency 'sphero', '>= 1.5.0'
+  s.add_runtime_dependency 'artoo', '>= 1.6.7'
+  s.add_runtime_dependency 'sphero', '>= 1.5.1'
   s.add_development_dependency 'minitest', '>= 5.0'
   s.add_development_dependency 'minitest-happy'
   s.add_development_dependency 'mocha', '>= 0.14.0'

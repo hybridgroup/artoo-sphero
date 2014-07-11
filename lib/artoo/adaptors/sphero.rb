@@ -35,6 +35,7 @@ module Artoo
       # Closes connection with device
       # @return [Boolean]
       def disconnect
+        Logger.info "Stopping and disconnecting sphero"
         sphero.close if connected?
 
         super

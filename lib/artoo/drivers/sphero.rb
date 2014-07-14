@@ -26,6 +26,7 @@ module Artoo
       def start_driver
         begin
           detect_collisions
+          enable_stop_on_disconnect
 
           every(interval) do
             handle_message_events

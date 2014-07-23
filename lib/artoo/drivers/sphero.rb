@@ -18,6 +18,11 @@ module Artoo
                   :set_data_streaming, :detect_collisions,
                   :handle_message_events, :get_rgb].freeze
 
+      def initialize(params={})
+        super
+        require_interface(:sphero)
+      end
+
       # Starts drives and required connections
 
       # Public: Starts the driver.

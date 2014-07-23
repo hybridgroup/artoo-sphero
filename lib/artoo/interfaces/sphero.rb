@@ -4,25 +4,25 @@ module Artoo
   module Interfaces
     # The Sphero Rover interface
     class Sphero < Rover
-    	def forward(speed)
+      def forward(speed)
         @device.roll 0, speed
-    	end
+      end
 
-    	def backward(speed)
+      def backward(speed)
         @device.roll 90, speed
-    	end
+      end
 
-    	def turn_left(degrees)
+      def turn_left(degrees)
         # TODO: implement
-    	end
+      end
 
-    	def turn_right(degrees)
+      def turn_right(degrees)
         # TODO: implement
-    	end
+      end
 
-    	def stop
+      def stop
         @device.stop
-    	end    	
+      end     
     end
   end
 end

@@ -9,6 +9,14 @@ module Artoo
       end
 
       def backward(speed)
+        @device.roll 180, speed
+      end
+
+      def left(speed)
+        @device.roll 270, speed
+      end
+
+      def right(speed)
         @device.roll 90, speed
       end
 

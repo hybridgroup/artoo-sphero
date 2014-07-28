@@ -7,12 +7,14 @@ work do
   @rolling = false
 
   every(3.seconds) do
-    puts "Rolling..."
+    puts "Rolling..." 
     unless @rolling
-      sphero.roll 90, rand(360)
+      # same as interfaces[:rover].forward(90)
+      forward(90)
       @rolling = true
     else
-      sphero.stop
+      #  same as interfaces[:rover].backward(90)
+      backward(90)
       @rolling = false
     end
   end

@@ -4,6 +4,7 @@ require 'artoo/drivers/sphero'
 describe Artoo::Drivers::Sphero do
   before do
     @device = mock('device')
+    @device.stubs(:require_interface)
     @driver = Artoo::Drivers::Sphero.new(:parent => @device)
     @connection = mock('connection')
     @messages = Queue.new

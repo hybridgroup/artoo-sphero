@@ -16,7 +16,8 @@ module Artoo
                   :stop, :heading, :stabilization, :color, :rgb, :set_color,
                   :back_led_output, :rotation_rate, :set_power_notification,
                   :set_data_streaming, :detect_collisions,
-                  :handle_message_events, :get_rgb, :stabilization].freeze
+                  :handle_message_events, :get_rgb, :start_calibration,
+                  :finish_calibration].freeze
 
       def initialize(params={})
         super
@@ -133,7 +134,7 @@ module Artoo
       # Finishes calibration process by setting the new heading, turning off back LED,
       # and turning back on auto-stabilization
       def finish_calibration
-        connection.heading = 0 
+        connection.heading = 0
         connection.back_led_output = 0
         connection.stabilization = true
       end

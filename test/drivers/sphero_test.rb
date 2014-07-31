@@ -74,4 +74,7 @@ describe Artoo::Drivers::Sphero do
 
   end
 
+  it 'should be able to start calibration process'
+  it 'should be able to finish calibration process'
+
 end

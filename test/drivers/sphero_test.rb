@@ -4,6 +4,7 @@ require 'artoo/drivers/sphero'
 describe Artoo::Drivers::Sphero do
   before do
     @device = mock('device')
+    @device.stubs(:require_interface)
     @driver = Artoo::Drivers::Sphero.new(:parent => @device)
     @connection = mock('connection')
     @messages = Queue.new
@@ -72,5 +73,8 @@ describe Artoo::Drivers::Sphero do
     end
 
   end
+
+  it 'should be able to start calibration process'
+  it 'should be able to finish calibration process'
 
 end

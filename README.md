@@ -33,25 +33,59 @@ end
 ```
 ## Connecting to Sphero
 
-### OSX / Linux
+### OSX
 
 The main steps are:
+
+- Pair your computer and the Sphero
+- Find out the sphero bluetooth address
+- Connect to the device via Artoo
+
+First pair your computer and Sphero. You can do this using bluetooth preferences. (Sphero won't stay connected)
+
+Find out serial port address by running this command:
+
+`$ ls /dev/tty.Sphero*`
+
+Now you are ready to run the example code, be sure to update this line with correct port
+
+```ruby
+connection :sphero, :adaptor => :sphero, :port => '/dev/tty.Sphero-WRW-RN-SPP'
+```
+
+### Linux
+
+The main steps are:
+
+- Find out the sphero bluetooth address
 - Pair your computer and the Sphero
 - Map your device to a unix port
 - Connect to the device via Artoo
 
-First pair your computer and Sphero. You might be prompted for a passcode, but you do not need to enter it, sinec the Sphero does not check.
-
-Once paired, use the `artoo scan serial` command to find out your connection info:
-
-```
-$ artoo scan serial
-```
-
-Now you are ready to connect to the Sphero, update the code to use correct serial port:
+First pair your computer and Sphero.
+We do this by finding the sphero bluetooth address and then running [Gort´s](http://gort.io) `gort bluetooth pair` command, you might be prompted to confirm a passcode.
+Just accept whatever passcode prompted.
 
 ```
-connection :sphero, :adaptor => :sphero, :port => '/dev/rfcomm0' #linux
+$ gort bluetooth scan
+Scanning ...
+00:06:66:4A:14:99 Sphero-WRW
+```
+
+After finding the bluetooth address, we pair the device with the computer.
+The easiest way to do this is to use the `gort bluetooth pair` command:
+
+`$ gort bluetooth pair 00:06:66:4A:14:99`
+
+Next, you need to bind the Sphero to the system serial port. In the above
+example, /dev/Sphero-WRW. Use the `gort bluetooth connect` command:
+
+`$ gort bluetooth connect 00:06:66:4A:14:99 Sphero-WRW`
+
+Now you are ready to run the example code, be sure to update this line with correct port.
+
+```ruby
+connection :sphero, :adaptor => :sphero, :port => '/dev/Sphero-WRW'
 ```
 
 ### Windows
@@ -61,8 +95,6 @@ We are currently working with the Celluloid team to add Windows support. Please 
 ## Documentation
 
 Check out our [documentation](http://artoo.io/documentation/) for lots of information about how to use Artoo.
-
-If you want to help us with some documentation on the site, you can go to [artoo.io branch](https://github.com/hybridgroup/artoo/tree/artoo.io) and then, follow the instructions.
 
 ## IRC
 

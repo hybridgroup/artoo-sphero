@@ -62,8 +62,6 @@ We are currently working with the Celluloid team to add Windows support. Please 
 
 Check out our [documentation](http://artoo.io/documentation/) for lots of information about how to use Artoo.
 
-If you want to help us with some documentation on the site, you can go to [artoo.io branch](https://github.com/hybridgroup/artoo/tree/artoo.io) and then, follow the instructions.
-
 ## IRC
 
 Need more help? Just want to say "Hello"? Come visit us on IRC freenode #artoo

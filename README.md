@@ -90,7 +90,7 @@ connection :sphero, :adaptor => :sphero, :port => '/dev/Sphero-WRW'
 
 ### Windows
 
-We are currently working with the Celluloid team to add Windows support. Please check back soon!
+You should be able to simply pair your Sphero using your normal system tray applet for Bluetooth, and then connect to the COM port that is bound to the device, such as `COM3`.
 
 ## Documentation
 
